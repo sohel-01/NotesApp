@@ -31,10 +31,11 @@ public class LocationAddress {
                         //for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
                         //    sb.append(address.getAddressLine(i)).append("\n");
                         //}
-                        sb.append(address.getSubLocality()).append(", ");
-                        sb.append(address.getAdminArea()).append(", ");
+                        //sb.append(address.getLocality()).append(", ");
+                        //sb.append(address.getAdminArea()).append(", ");
+                        sb.append(address.getAddressLine(0)).append(" , ");
                         //sb.append(address.getPostalCode()).append("\n");
-                        sb.append(address.getCountryName());
+                        //sb.append(address.getCountryName());
                         result = sb.toString();
                     }
                 } catch (IOException e) {

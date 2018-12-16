@@ -49,6 +49,7 @@ public class AddNotes extends AppCompatActivity implements View.OnClickListener 
     Button btnVoiceNotes;
     Button btnSave;
     Button btnCancel;
+    Button btnMap;
 
     String strSubjectname;
     String strNotesTitle;
@@ -109,6 +110,9 @@ public class AddNotes extends AppCompatActivity implements View.OnClickListener 
 
         btnCancel = (Button) findViewById(R.id.btnCancel);
         btnCancel.setOnClickListener(this);
+
+        btnMap = (Button) findViewById(R.id.btnMap);
+        btnMap.setOnClickListener(this);
     }
 
 
@@ -187,6 +191,12 @@ public class AddNotes extends AppCompatActivity implements View.OnClickListener 
         } else if (b.getText().equals("Voice Notes")) {
             if (saveNotes()) {
                 Intent i = new Intent(getApplicationContext(), VoiceNotes.class);
+                i.putExtra("NotesTitle", strNotesTitle);
+                startActivity(i);
+            }
+        }else if(b.getText().equals("Map")){
+            if (saveNotes()) {
+                Intent i = new Intent(getApplicationContext(), MapActivity.class);
                 i.putExtra("NotesTitle", strNotesTitle);
                 startActivity(i);
             }
